@@ -1,10 +1,5 @@
 
-/**
- * Ikay Engineering Solutions
- * Main JavaScript File
- */
 
-// Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize AOS animations
     AOS.init({
@@ -284,43 +279,43 @@ document.addEventListener('DOMContentLoaded', function() {
         title: 'Corporate Office HVAC Upgrade',
         category: 'Commercial',
         description: 'Complete redesign and installation of energy-efficient VRF system for a 15-floor corporate headquarters. The project involved replacing the outdated system while maintaining operations in the fully occupied building, resulting in a 40% reduction in energy consumption and improved comfort for over 2,000 employees.',
-        image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
+        image: src="./Images/corporate office.jpg",
         location: 'Hyderabad, India'
       },
       {
         title: 'Hospital Ventilation System',
         category: 'Healthcare',
         description: 'Design and implementation of specialized ventilation system with HEPA filtration for a 200-bed hospital. This state-of-the-art solution ensures optimal air quality in operating theaters, ICUs, and isolation rooms, meeting the strictest healthcare air quality standards and infection control protocols.',
-        image: 'https://plus.unsplash.com/premium_photo-1661698763470-aaebec669df8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1051&q=80',
-        location: 'Chennai, India'
+        image: src="./Images/hospital ventilation.png",
+        location: 'Hyderabad, India'
       },
       {
         title: 'Manufacturing Plant MEP Installation',
         category: 'Industrial',
         description: 'Comprehensive MEP services for a new manufacturing facility including industrial-grade HVAC systems. The project included advanced ventilation systems for process areas, precise temperature control for product storage, and energy-efficient solutions throughout the 50,000 sq ft facility.',
-        image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1050&q=80',
-        location: 'Pune, India'
+        image: src="./Images/manufacturing.jpg",
+        location: 'Hyderabad, India'
       },
       {
-        title: 'Luxury Villa Climate Control',
+        title: 'Villa Climate Control',
         category: 'Residential',
-        description: 'Installation of integrated climate control systems for a premium residential complex. This project featured smart home integration, multi-zone climate control, and energy-efficient VRF systems across 12 luxury villas, providing precise temperature and humidity control while maintaining architectural aesthetics.',
-        image: 'https://images.unsplash.com/photo-1600566753151-384129cf4e3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80',
-        location: 'Bangalore, India'
+        description: 'Installation of integrated climate control systems for a premium residential villa. This project featured smart home integration, multi-zone climate control, and energy-efficient VRF systems, providing precise temperature and humidity control while maintaining architectural aesthetics.',
+        image: src="./Images/luxury villa.jpg",
+        location: 'Hyderabad, India'
       },
       {
         title: 'Retail Mall HVAC System',
         category: 'Commercial',
         description: 'Design and implementation of central HVAC system for a 500,000 sq ft shopping mall. This high-capacity solution efficiently manages climate control across diverse retail environments, food courts, and common areas, balancing comfort with energy efficiency in this massive commercial space.',
-        image: 'https://images.unsplash.com/photo-1533653638083-702db8cdd3cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1050&q=80',
-        location: 'Mumbai, India'
+        image: src="./Images/retail mall.webp" ,
+        location: 'Hyderabad, India'
       },
       {
         title: 'Diagnostic Center MEP Services',
         category: 'Healthcare',
         description: 'Specialized MEP installations for a state-of-the-art diagnostic center with precision temperature control. This project included dedicated systems for MRI, CT scanning, and laboratory areas, with redundant backup systems ensuring uninterrupted operation for critical diagnostic equipment.',
-        image: 'https://images.unsplash.com/photo-1504439468489-c8920d796a29?ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80',
-        location: 'Delhi, India'
+        image: src="./Images/diagnostic centre.jpg",
+        location: 'Hyderabad, India'
       }
     ];
     
@@ -475,16 +470,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
-const backToTop = document.getElementById("backToTop");
-
-window.onscroll = function() {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        backToTop.style.display = "block";
-    } else {
-        backToTop.style.display = "none";
-    }
-};
-
-function topFunction() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
