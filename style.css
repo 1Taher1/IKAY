@@ -1,9 +1,4 @@
 
-/* 
-* Ikay Engineering Solutions
-* Main Stylesheet
-*/
-
 /* ===== BASE STYLES ===== */
 :root {
     /* Brand Colors */
@@ -123,7 +118,8 @@
   h2 {
     font-size: var(--font-size-4xl);
   }
-  
+  .centre {text-align: center;}
+
   h3 {
     font-size: var(--font-size-2xl);
   }
@@ -174,7 +170,12 @@
     margin: 0 auto;
     padding: 0 var(--spacing-lg);
   }
-  
+  /* 3. Remove extra bottom‑margin above the form’s section header */
+section#contact .section-header {
+  margin-bottom: 0 !important;
+  padding: var(--spacing-2xl) 0 0 0 !important;
+}
+
   .section {
     padding: var(--spacing-2xl) 0;
     position: relative;
@@ -215,7 +216,7 @@
   .section-subtitle span {
     position: relative;
   }
-  
+  /*
   .section-subtitle span::after {
     content: '';
     position: absolute;
@@ -225,15 +226,13 @@
     height: 3px;
     background-color: var(--brand-blue);
     transform: translateX(-50%);
-  }
+  }*/
   
   .orange-text {
     color: var(--brand-orange-dark);
   }
   
-  .orange-text span::after {
-    background-color: var(--brand-orange-dark);
-  }
+  
   
   /* ===== HEADER & NAVIGATION ===== */
   header {
@@ -318,8 +317,7 @@
         font-size: 0.875rem;
     }
 }
-
-.mobile-nav .cta-btn {
+.cta-btn {
     margin-left: 8px;
     padding: 6px 12px;
     background-color: #ff5722;
@@ -327,6 +325,17 @@
     border-radius: 5px;
     animation: pulse 2s infinite;
     text-decoration: none;
+}
+@media (min-width: 768px)  {.mobile-nav {
+  display: none;
+    margin-left: 8px;
+    padding: 6px 12px;
+    background-color: #ff5722;
+    color: white;
+    border-radius: 5px;
+    animation: pulse 2s infinite;
+    text-decoration: none;
+}
 }
 
 @keyframes pulse {
@@ -1634,6 +1643,21 @@ iframe {
     flex: 2;
     min-width: 300px;
 }
+/* 1. Ensure the iframe is always tall enough */
+section#contact iframe {
+  width: 100% !important;
+  /* Base minimum height for desktop */
+  min-height: 1349px !important;
+  height: auto !important;
+}
+
+/* If your mobile form is actually longer, raise the min-height */
+@media (max-width: 768px) {
+  section#contact iframe {
+  
+    min-height: 1390px!important;
+  }
+}   
 
 .contact-details {
     flex: 1;
@@ -1663,3 +1687,67 @@ iframe {
         padding: 15px;
     }
 }
+
+.fixed-mobile-cta {
+  display: none;
+}
+/* Show & position only on screens ≤768px */
+@media (max-width: 768px) {
+  .fixed-mobile-cta {
+    display: block;        /* override the desktop “none” */
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--brand-orange-dark);
+    color: #fff;
+    border-radius: 505px;
+    box-shadow: var(--shadow-md);
+    animation: pulse 2s infinite;
+    z-index: 1001;
+
+    /* prevent any overflow if the viewport gets very narrow */
+    max-width: 90%;
+    box-sizing: border-box;
+  }
+}
+
+
+@keyframes fixed-mobile-cta {
+    0% {
+      box-shadow: 0 0 0 0 rgba(234, 88, 12, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(234, 88, 12, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(234, 88, 12, 0);
+    }
+  }
+
+/* 2. Move the mobile CTA button to a fixed bottom‑right on mobile */
+@media (max-width: 768px) {}
+  /* hide the header‑embedded CTA */
+  .mobile-nav .cta-btn {
+    display: none !important;
+  }
+  
+  
+/* for the small centered underline under headings */
+.section-header h2::after {
+  content: "";
+  display: block;
+  width: 50px;         /* Adjust the length of the underline */
+  height: 3px;         /* Adjust the thickness of the underline */
+  background-color: var(--brand-color); /* Use your theme color */
+  margin: 0.5rem auto; /* Center and add spacing */
+}
+
+/* FILE: style.css  — append at the very end */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+
+
