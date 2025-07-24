@@ -1751,3 +1751,59 @@ html, body {
 
 
 
+/* --------------------------------------------------
+   VAPI AI Call Support Widget — IKAY Custom Styles
+   --------------------------------------------------
+   - Orange → lighter‑orange gradient to match IKAY’s buttons
+   - “📞 Call Support” label instead of chat
+   - Smooth expand/collapse transitions
+   Paste into your main CSS file (e.g., assets/css/style.css)
+   -------------------------------------------------- */
+
+vapi-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  
+  max-width: 90%;
+  height: 60px;              /* closed height */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  z-index: 9999;
+  transition: height 0.3s ease-in-out, 
+  font-family: inherit;      /* match site font */
+}
+
+/* Closed state: orange gradient + phone icon + label */
+vapi-widget[vapi-closed] {
+  background: linear-gradient(135deg, #ff6600 0%, #ff8c1a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Inject “📞 Call Support” text when closed */
+vapi-widget[vapi-closed]::after {
+  content: "📞 Call Support";
+}
+
+/* Opened state: full call‑panel height with white bg */
+vapi-widget[vapi-opened] {
+  height: 500px;            /* adjust as needed for call UI */
+  background: #ffffff;
+}
+
+/* Ensure the embedded iframe covers the full expanded area */
+vapi-widget ::slotted(iframe) {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Hide the embed script tag so it doesn’t affect layout */
+script[src*="widget.umd.js"] {
+  display: none;
+}
